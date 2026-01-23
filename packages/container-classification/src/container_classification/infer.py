@@ -117,7 +117,7 @@ def infer(
         _probs = torch.sigmoid(_logits)
 
         # get predictions by thresholding probabilities
-        _preds = get_predictions_from_threshold_probabilities(_probs, t=0.999)
+        _preds = get_predictions_from_threshold_probabilities(_probs, t=0.75)
 
         # Accuracy per image
         for img_name, patch_id, pred, prob in zip(
