@@ -4,12 +4,12 @@ This repository holds code for the P2CODE component of Software Attestation (SA)
 as a monorepo, holding a set of Python packages with complementary functionalities that cover important stages
 of the Software Attestation lifecycle:
 
-* `binvis`: A Python package with tools for visualizing binary files as images using space-filling curves ([docs](./binvis/README.md)).
+* `binvis`: A Python package with tools for visualizing binary files as images using space-filling curves ([docs](./packages/binvis/README.md)).
 
 * `container-classification`: A Python package that provides training, evaluation and inference tooling for patch-based
-  vision models that classify software container images. ([docs](./container-classification/README.md)).
+  vision models that classify software container images. ([docs](./packages/container-classification/README.md)).
 
-* `inference-pipeline`: A Python package that that provides Software Attestation as a REST service ([docs](./inference-pipeline/README.md)).
+* `inference-pipeline`: A Python package that that provides Software Attestation as a REST service ([docs](./packages/inference-pipeline/README.md)).
 
 References:
 - **[Dataset]**(https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
