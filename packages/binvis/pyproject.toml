@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "binvis"
+version = "0.0.1"
+description = "Tools for visualizing binary files as images using space-filling curves" 
+readme = "README.md"
+authors = [{ name = "Akis Nousias", email = "anousias@k3y.bg" }]
+maintainers = [{ name = "Akis Nousias", email = "anousias@k3y.bg" }]
+dependencies = [
+    "pillow>10.0.0",
+    "numpy>=1.20.0",
+    "scipy>=1.10.0",
+    "numpy-hilbert-curve==1.0.1",
+]
+
+[project.scripts]
+p2code-binvis-visualize-tar = "bin.tarfile_visualizer:main"
+p2code-binvis-visualize-bin = "bin.binary_visualizer:main"
+p2code-binvis-visualize-iter-tar = "bin.tarfile_visualizer:main"
+p2code-binvis-visualize-iter-bin = "bin.binary_visualizer:main"
+
+[project.optional-dependencies]
+test = ["pytest>=7.0.0"]
+
+[tool.pytest.ini_options]
+pythonpath = [".", "src"]
