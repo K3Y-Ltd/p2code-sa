@@ -1,2 +1,95 @@
-# p2code-sa
-P2CODE Service Attestation Malware Detection Component Service
+# Software Attestation
+
+This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
+as a monorepo, holding a set of Python packages with complementary functionalities that cover important stages
+of the Software Attestation lifecycle:
+
+* `binvis`: A Python package with tools for visualizing binary files as images using space-filling curves ([docs](./binvis/README.md)).
+
+* `container-classification`: A Python package that provides training, evaluation and inference tooling for patch-based
+  vision models that classify software container images. ([docs](./container-classification/README.md)).
+
+* `inference-pipeline`: A Python package that that provides Software Attestation as a REST service ([docs](./inference-pipeline/README.md)).
+
+References:
+- **[Dataset]**(https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
+- **[Paper]**(https://ieeexplore.ieee.org/document/11161263) 
+- **[Preprint]**(https://arxiv.org/abs/2504.03238)
+
+
+## Installation
+
+The Software Attestation functionality is supported by three python packages that can be installed as-is 
+in a virtual environment such as `conda` or `venv`. In addition it can be deployed as a Docker container. 
+
+### Installation as `python` packages
+
+Preferably, create a new python environment to hold the package installations. Make sure that the new environment
+includes basic installation libraries such as `wheel` and `pip`. Usually, these are supported by default for new 
+`conda` and `venv` environments. 
+
+For each package, navigate to the package's `setup.py` file and build a package `.whl` file:
+```
+python setup.py bdist_wheel 
+```
+
+Install the packages via their `.whl` files using `pip`:
+```
+pip install <my-package>.whl
+```
+
+Alternativelly, the packages can be installed in editable mode by navigating to the corresponding package folder 
+and execute an editable installation as follows:
+```
+pip install -e ./src
+```
+
+## Usage
+
+Software Attestation is a security component that attests an input service order in the form of a `docker-compose` file
+or a Kubernetes Helm chart and identifies services that have been malware compromised. The Software Attestation service
+can be deployed as a service behind a ReST API. 
+
+
+## References
+
+Software Attestation is accompanied by the following publications:
+
+* A. Nousias, E. Katsaros, E. Syrmos, P.R. Grammatikis, T. Lagkas, V. Argyriou, I. Moscholios, E. Markakis, S. Goudos and . Sarigiannidis, “Malware Detection in Docker Containers: An Image is Worth a Thousand Logs”, ICC-W 2025 - IEEE International Conference on Communications Workshops, 2025, doi: 10.1109/ICC52391.2025.11161263.
+
+with the following bibtex entry:
+
+```bibtex
+@inproceedings{Nousias2025-kg,
+  title           = "Malware detection in docker containers: An image is worth
+                     a thousand logs",
+  booktitle       = "{ICC} 2025 - {IEEE} International Conference on
+                     Communications",
+  author          = "Nousias, Akis and Katsaros, Efklidis and Syrmos, Evangelos
+                     and Radoglou-Grammatikis, Panagiotis and Lagkas, Thomas
+                     and Argyriou, Vasileios and Moscholios, Ioannis and
+                     Markakis, Evangelos and Goudos, Sotirios and
+                     Sarigiannidis, Panagiotis",
+  publisher       = "IEEE",
+  pages           = "6401--6407",
+  month           =  jun,
+  year            =  2025,
+  conference      = "ICC 2025 - IEEE International Conference on Communications",
+  location        = "Montreal, QC, Canada"
+}
+```
+
+* A. Nousias E. Katsaros, E. Syrmos, P.R. Grammatikis, T. Lagkas, V. Argyriou, I. Moscholios, E. Markakis, S. Goudos and P. Sarigiannidis, COSOCO Image Dataset (Revision fd5a8dd) . Hugging Face , 2025. doi: 10.57967/hf/5853 .
+
+with the bibtex entry:
+```bibtex
+@MISC{Nousias2025-nl,
+  title     = "cosoco-image-dataset",
+  author    = "Nousias, Akis and Katsaros, Efklidis and Syrmos, Evangelos and
+               Radoglou-Grammatikis, Panagiotis and Lagkas, Thomas and
+               Argyriou, Vasileios and Moscholios, Ioannis and Markakis,
+               Evangelos and Goudos, Sotirios and Sarigiannidis, Panagiotis",
+  publisher = "Hugging Face",
+  year      =  2025
+}
+```
