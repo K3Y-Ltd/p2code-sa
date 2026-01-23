@@ -1,0 +1,46 @@
+device = "cuda"
+use_wandb = true
+
+[dataset]
+format = "json"
+path = "/home/anousias/p2code/datasets/cosoco-flat/1024-unrolled"
+ 
+[dataset.json]
+train  = "/home/anousias/p2code/datasets/cosoco-flat/splits/8b34-train.json"
+valid = "/home/anousias/p2code/datasets/cosoco-flat/splits/8b34-valid.json"
+test  = "/home/anousias/p2code/datasets/cosoco-flat/splits/8b34-test.json"
+
+[dataset.kw]
+task = "classification" # "classification" or "segmentation"
+patch_size = [256, 256]
+weights = [1.0, 256.0]
+
+[dataset.dataloader.train]
+batch_size = 256
+shuffle = true
+num_workers = 2
+drop_last = false
+
+[dataset.dataloader.valid]
+batch_size = 32
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[train]
+model = "resnet18" # Options: "alexnet", "resnet18", "mobile_net", "squeeze_net", "vgg", "efficient_net", "shuffle_net", "resnext101"
+epochs = 20
+
+[train.optim]
+lr = 1e-4
+
+[out]
+model_dir = "/home/anousias/p2code/models"
+
+[wandb]
+WANDB_MODE = "online" # Options: 'online', 'offline' ,'disabled'
+name = "resnet18-json"
+
+[wandb.init]
+project = "incode-sa"
+entity = "anousias-k3y"

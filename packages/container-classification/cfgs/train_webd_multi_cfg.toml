@@ -1,0 +1,59 @@
+device = "cuda"
+use_wandb = true
+
+# `format = "webdataset-multi"`: training on multiple chained datasets
+# that follow the `webdataset` format.
+[dataset]
+format = "webdataset-multi"
+
+[[dataset.train]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "train"
+
+[[dataset.valid]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "valid"
+
+[[dataset.test]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "test"
+
+[[dataset.test]]
+path = "/home/anousias/p2code/datasets/aa"
+split = "aa4"
+
+
+[dataset.kw]
+task = "classification" # "classification" or "segmentation"
+patch_size = [256, 256]
+weights = [1.0, 256.0]
+
+[dataset.webloader.train]
+batch_size = 256
+shuffle = false
+num_workers = 3
+drop_last = false
+
+[dataset.webloader.valid]
+batch_size = 32
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[train]
+model = "resnet18" # resnet18: "alexnet", "resnet18", "mobile_net", "squeeze_net", "vgg", "efficient_net", "shuffle_net", "resnext101"
+epochs = 20
+
+[train.optim]
+lr = 1e-4
+
+[out]
+model_dir = "/home/anousias/p2code/models"
+
+[wandb]
+WANDB_MODE = "online" # Options: 'online', 'offline' ,'disabled'
+name = "resnet18-bs256-tr-cosoco-aa"
+
+[wandb.init]
+project = "incode-sa"
+entity = "anousias-k3y"

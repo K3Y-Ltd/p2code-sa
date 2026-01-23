@@ -1,0 +1,15 @@
+[image]
+path = "/home/efklidis/Documents/sa-dataset-8b34/1024-unrolled/"
+name = "malevolent-8b34-CNTA00210-1.png"
+flipped = false
+
+[model]
+type = "alexnet"
+path = "/home/efklidis/k3y/incode-sa/packages/container-classification/src/bin/runs/alexnet-exp/alexnet_ckpt_14.pth"
+device = "cuda"
+
+[gradcam]
+class_to_xai = 1
+
+[output]
+path = "/home/efklidis/test"
