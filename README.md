@@ -38,6 +38,8 @@ Install the packages via their `.whl` files using `pip`:
 pip install <my-package>.whl
 ```
 
+### Installation in development mode
+
 Alternativelly, the packages can be installed in editable mode by navigating to the corresponding package folder 
 and execute an editable installation as follows:
 ```
