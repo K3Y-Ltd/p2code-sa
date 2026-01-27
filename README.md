@@ -1,15 +1,16 @@
 # Software Attestation
 
 This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
-as a monorepo, holding a set of Python packages with complementary functionalities that cover important stages
-of the Software Attestation lifecycle:
+as a monorepo, holding a set of Python packages with complementary functionalities that cover basic stages
+of the Software Attestation lifecycle. The packages included are the following:
 
-* `binvis`: A Python package with tools for visualizing binary files as images using space-filling curves ([docs](./packages/binvis/README.md)).
+- **BinVis**: A Python package for visualizing binary files as images using space-filling curves. The supports
+  handling visualizing binary files up to several GBs. ([docs](./packages/binvis/README.md))
 
-* `container-classification`: A Python package that provides training, evaluation and inference tooling for patch-based
-  vision models that classify software container images. ([docs](./packages/container-classification/README.md)).
+- **Container Classification**: A Python package that provides training, evaluation and inference tooling for 
+  patch-based vision models that classify image representations of software containers. ([docs](./packages/container-classification/README.md))
 
-* `inference-pipeline`: A Python package that that provides Software Attestation as a REST service ([docs](./packages/inference-pipeline/README.md)).
+- **Inference Pipeline**: A Python package that wraps Software Attestation as a REST service ([docs](./packages/inference-pipeline/README.md)).
 
 References:
 - **[Dataset]**(https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
@@ -17,12 +18,23 @@ References:
 - **[Preprint]**(https://arxiv.org/abs/2504.03238)
 
 
+## Usage
+
+Software Attestation is a security component that attests an input service order in the form of a `docker-compose` file
+or a Kubernetes Helm chart and identifies services that have been malware compromised. The Software Attestation service
+can be deployed as a service behind a REST API or deployed as a container. For more information go through the [docs](./packages/inference-pipeline/README.md).
+
+
 ## Installation
 
 The Software Attestation functionality is supported by three python packages that can be installed as-is 
-in a virtual environment such as `conda` or `venv`. In addition it can be deployed as a Docker container. 
+in a virtual environment such as `conda` or `venv`. The packages located under the `packages` folder are:
+* `binvis`
+* `container-classification`
+* `inference-pipeline`
 
-### Installation as `python` packages
+
+### Installation as packages
 
 Preferably, create a new python environment to hold the package installations. Make sure that the new environment
 includes basic installation libraries such as `wheel` and `pip`. Usually, these are supported by default for new 
@@ -45,12 +57,6 @@ and execute an editable installation as follows:
 ```
 pip install -e ./src
 ```
-
-## Usage
-
-Software Attestation is a security component that attests an input service order in the form of a `docker-compose` file
-or a Kubernetes Helm chart and identifies services that have been malware compromised. The Software Attestation service
-can be deployed as a service behind a ReST API. 
 
 
 ## References
