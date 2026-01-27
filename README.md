@@ -1,5 +1,7 @@
 # Software Attestation
 
+![software-attestation-architecture](/docs/p2code-software-attestation-architecture-overview.png)
+
 This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
 as a monorepo, holding a set of Python packages with complementary functionalities that cover basic stages
 of the Software Attestation lifecycle. The packages included are the following:

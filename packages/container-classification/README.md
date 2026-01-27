@@ -12,6 +12,8 @@ malware-compromised software containers from image representations. It provides
 ready-to-run scripts to train models, evaluate checkpoints, run inference on
 new container images, and generate Grad-CAM explanations.
 
+![container-classification-diagram](./docs/container-classification-diagram.png)
+
 ### What it does
 
 - Loads RGB images representing software containers.
