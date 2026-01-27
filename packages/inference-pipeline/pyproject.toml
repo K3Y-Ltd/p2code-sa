@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "p2code-sa-inference-pipeline"
+version = "0.0.1"
+description = "REST service that supports 'software attestation' on dockerized software containers."
+readme = "README.md"
+authors = [
+  { name = "Evangelos Syrmos", email = "esysrmos@k3y.bg" },
+  { name = "Akis Nousias", email = "anousias@k3y.bg" },
+  { name = "Efkleidis Katsaros", email = "ekatsaros@k3y.bg" },
+]
+maintainers = [{ name = "Akis Nousias", email = "anousias@k3y.bg" }]
+dependencies = [
+  "PyYAML>=6.0.0",
+  "stix2>=3.0.1",
+  "docker>=7.0.0",
+  "Flask>=3.1.0",
+  "sqlalchemy>=1.4.0",
+]
+
+[project.scripts]
+p2code-inference-pipeline = "bin.inference_api:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
