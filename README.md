@@ -1,4 +1,4 @@
-# Software Attestation
+# P2CODE: Software Attestation - Malware Detection Component (MDC)
 
 <div align="center">
 
@@ -21,17 +21,14 @@ of the Software Attestation lifecycle. The packages included are the following:
 
 - **Inference Pipeline**: A Python package that wraps Software Attestation as a REST service ([docs](./packages/inference-pipeline/README.md)).
 
+Software Attestation is a security component that attests an input service order in the form of a `docker-compose` file
+or a Kubernetes Helm chart and identifies services that have been malware compromised. The Software Attestation service
+can be deployed as a service behind a REST API or deployed as a container.
+
 References:
 - **[Dataset]**(https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
 - **[Paper]**(https://ieeexplore.ieee.org/document/11161263) 
 - **[Preprint]**(https://arxiv.org/abs/2504.03238)
-
-
-## Usage
-
-Software Attestation is a security component that attests an input service order in the form of a `docker-compose` file
-or a Kubernetes Helm chart and identifies services that have been malware compromised. The Software Attestation service
-can be deployed as a service behind a REST API or deployed as a container. For more information go through the [docs](./packages/inference-pipeline/README.md).
 
 
 ## Installation
