@@ -1,5 +1,12 @@
 # Software Attestation
 
+<div align="center">
+
+[![arxiv](https://img.shields.io/badge/arXiv-2504.03238-b31b1b.svg?style=flat-square)](https://arxiv.org/abs/2504.03238)
+[![huggingface](https://img.shields.io/badge/🤗%20Hugging%20Face-10.57967/hf/5853-FFD21E.svg?style=flat-square)](https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
+
+</div>
+
 ![software-attestation-architecture](/docs/p2code-software-attestation-architecture-overview.png)
 
 This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
