@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "container-classification"
+version = "0.0.1"
+description = "Provides training, evaluation and inference tooling for patch-based vision models that classify software container images"
+readme = "README.md"
+authors = [
+  { name = "Akis Nousias", email = "anousias@k3y.bg" },
+  { name = "Efkleidis Katsaros", email = "ekatsaros@k3y.bg" },
+]
+maintainers = [{ name = "Akis Nousias", email = "anousias@k3y.bg" }]
+dependencies = [
+  "toml>=0.10",
+  "torch>=2.0.0",
+  "torchvision",
+  "torchaudio",
+  "opencv-python>=4.8.0",
+  "numpy>=1.20.0",
+  "scikit-learn>=1.4.0",
+  "webdataset>=1.0.2",
+]
+
+[project.optional-dependencies]
+dataset = ["huggingface_hub"]
+log = ["wandb"]
+
+[project.scripts]
+p2code-container-classifier-train = "bin.train:main"
+p2code-container-classifier-infer = "bin.infer:main"
+p2code-container-classifier-explain = "bin.explain:main"
+p2code-container-classifier-evaluate = "bin.evaluate:main"
+
+[tool.setuptools]
+package-dir = { "" = "src" }
+
+[tool.setuptools.packages.find]
+where = ["src"]

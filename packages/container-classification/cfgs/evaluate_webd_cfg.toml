@@ -1,0 +1,59 @@
+device = "cuda"
+use_wandb = false
+
+[dataset]
+format = "webdataset"
+# path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+# splits = ["test"]
+path = "/home/anousias/p2code/datasets/aa"
+splits = ["aa1", "aa2", "aa3", "aa4"]
+
+[dataset.kw]
+task = "classification"
+weights = [1.0, 64.0]
+patch_size = [256, 256]
+
+[dataset.webloader.test]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[dataset.webloader.aa1]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[dataset.webloader.aa2]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[dataset.webloader.aa3]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[dataset.webloader.aa4]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[model]
+model_type = "resnet18"
+model_path = "/home/anousias/p2code/models/resnet18-webd-multi-prod-v1_0_0/resnet18_ckpt_20.pth"
+
+[out]
+results_path = "/home/anousias/p2code/results/resnet18-webd-multi-prod-v1_0_0-e_20.csv"
+
+[wandb]
+WANDB_MODE = "online"      # Options: 'online', 'offline' ,'disabled'
+name = "resnet18-bs32-cw1"
+
+[wandb.init]
+project = "incode-sa"
+entity = "anousias-k3y"

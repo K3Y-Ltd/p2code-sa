@@ -1,0 +1,52 @@
+[dataset]
+format = "webdataset-multi"
+
+[[dataset.train]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "train"
+
+[[dataset.train]]
+path = "/home/anousias/p2code/datasets/aa"
+split = ["aa1", "aa2", "aa4"]
+
+[[dataset.valid]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "valid"
+
+[[dataset.test]]
+path = "/home/anousias/p2code/datasets/cosoco/1024-unrolled"
+split = "test"
+
+[[dataset.test]]
+path = "/home/anousias/p2code/datasets/aa"
+split = "aa4"
+
+
+[dataset.kw]
+task = "classification" # "classification" or "segmentation"
+patch_size = [256, 256]
+weights = [1.0, 256.0]
+
+[dataset.webloader.train]
+batch_size = 256
+shuffle = false
+num_workers = 2
+drop_last = false
+
+[dataset.webloader.valid]
+batch_size = 32
+shuffle = false
+num_workers = 2
+drop_last = false
+
+[dataset.dataloader.train]
+batch_size = 256
+shuffle = false
+num_workers = 1
+drop_last = false
+
+[dataset.dataloader.valid]
+batch_size = 32
+shuffle = false
+num_workers = 1
+drop_last = false
