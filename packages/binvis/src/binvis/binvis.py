@@ -15,12 +15,6 @@ from binvis.colormap import (
     ColorTarFileStructure,
 )
 
-from binvis.drawmap import (
-    drawmap_square,
-    drawmap_unrolled,
-    drawmap_unrolled_n,
-)
-
 from binvis.drawmap_np import (
     drawmap_square_np,
     drawmap_unrolled_np,
