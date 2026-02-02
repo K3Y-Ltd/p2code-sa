@@ -34,7 +34,7 @@ and a list of checkpoint filenames:
 
 ```yaml
 models:
-  path: "/usr/src/incode"
+  path: "/usr/src/p2code"
   files:
     - "alexnet_container_classifier_1.pth"
     - "alexnet_container_classifier_2.pth"

@@ -46,9 +46,9 @@ def load_img(path_to_img: str) -> np.ndarray:
     return img
 
 
-def _parse_result_for_incode_sa(y_preds, y_probs):
+def _parse_result_for_p2code_sa(y_preds, y_probs):
     """
-    Parse results for incode software attestation
+    Parse results for p2code software attestation
     """
     LABELS = ["benign", "malevolent"]
 
@@ -155,7 +155,7 @@ def infer(
         y_preds_agg[img_name] = img_pred
         y_probs_agg[img_name] = img_prob
 
-    return _parse_result_for_incode_sa(y_preds_agg, y_probs_agg)
+    return _parse_result_for_p2code_sa(y_preds_agg, y_probs_agg)
 
 
 def load_model(
