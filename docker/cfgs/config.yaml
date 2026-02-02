@@ -1,0 +1,40 @@
+flask:
+  host: "127.0.0.1"
+  port: 8000
+  debug: False
+
+docker:
+  login_to_remote: True
+  # login arguments 'registry', 'username' and 'password' are passed as environment variables
+
+logging:
+  version: 1
+  formatters:
+    standard:
+      format: "[%(asctime)s.%(msecs)03d] %(levelname)-7s - %(message)s"
+      datefmt: "%Y-%m-%d %H:%M:%S"
+  handlers:
+    console:
+      class: logging.StreamHandler
+      level: DEBUG
+      formatter: standard
+  loggers:
+    inference_pipeline.api.app:
+      handlers: [ console ]
+      level: INFO
+  # root:
+  #   handlers: [ console ]
+  #   level: DEBUG
+
+database:
+  uri: "sqlite:///data/database.db"
+  echo: False
+
+models:
+  path: "/usr/src/p2code"
+  files:
+  - "alexnet_container_classifier_1.pth"
+  - "alexnet_container_classifier_2.pth"
+  - "alexnet_container_classifier_3.pth"
+  - "alexnet_container_classifier_4.pth"
+  file_type: ".pth"
