@@ -31,7 +31,7 @@ database:
   echo: False
 
 models:
-  path: "/usr/src/p2code"
+  path: "/usr/src/p2code/models"
   files:
   - "alexnet_container_classifier_1.pth"
   - "alexnet_container_classifier_2.pth"
