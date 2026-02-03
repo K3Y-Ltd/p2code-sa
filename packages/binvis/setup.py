@@ -24,7 +24,7 @@ setuptools.setup(
     },
     install_requires=[
         "pillow>10.0.0",
-        "numpy>=1.20.0",
+        "numpy>=2.0.0",
         "scipy>=1.10.0",
         "numpy-hilbert-curve==1.0.1",
     ],
