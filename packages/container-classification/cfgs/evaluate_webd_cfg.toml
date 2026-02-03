@@ -55,5 +55,5 @@ WANDB_MODE = "online"      # Options: 'online', 'offline' ,'disabled'
 name = "resnet18-bs32-cw1"
 
 [wandb.init]
-project = "incode-sa"
-entity = "anousias-k3y"
+project = "project-name"
+entity = "user-wandb-account"

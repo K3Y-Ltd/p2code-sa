@@ -23,21 +23,19 @@ setuptools.setup(
         ],
     },
     install_requires=[
-        "toml>=0.10",
         "torch>=2.0.0",
         "torchvision",
-        "torchaudio",
         "opencv-python>=4.8.0",
         "numpy>=1.20.0",
         "scikit-learn>=1.4.0",
         "webdataset>=1.0.0",
+        "toml>=0.10",
     ],
     extras_require={
         "dataset": ["huggingface_hub"],
         "log": ["wandb"],
     },
     dependency_links=[
-        "https://download.pytorch.org/whl/cpu",
         "https://download.pytorch.org/whl/cpu",
         "https://download.pytorch.org/whl/cpu",
     ],

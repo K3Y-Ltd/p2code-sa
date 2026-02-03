@@ -115,7 +115,7 @@ Image-level aggregation (as implemented):
 
 **NOTE**: Current implementation that supports specific use case of P2CODE Software 
 Attestation, performs single-image inference. So if multiple paths are passed, they
-are ignored. This happens inside `_parse_result_for_incode_sa(...)`.
+are ignored. This happens inside `_parse_result_for_p2code_sa(...)`.
 
 
 ## Minimal programmatic example

@@ -1,0 +1,24 @@
+services:
+  p2code-inference-pipeline:
+    image: p2code-inference-pipeline:latest
+    volumes:
+      - ./cfgs/config.yaml:/usr/src/p2code/cfgs/config.yaml:ro
+
+    environment:
+      CONTAINER_REGISTRY: "${CONTAINER_REGISTRY}"
+      CONTAINER_REGISTRY_USERNAME: "${CONTAINER_REGISTRY_USERNAME}"
+      CONTAINER_REGISTRY_TOKEN: "${CONTAINER_REGISTRY_TOKEN}"
+
+    # To execute a docker-in-docker setting run:
+    # 1. Either using the `privileged` flag
+    # 2. or the `sysbox-runc` runtime from Sysbox.
+    # privileged: true
+    runtime: sysbox-runc
+
+    # Equivalent to: -it
+    tty: true
+    stdin_open: true
+
+    # Resource controls
+    mem_limit: 8gb    # max memory
+    cpus: 2           # CPU cores
