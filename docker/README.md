@@ -42,11 +42,8 @@ For *development purposes only*, we can use the `--privileged` flag instead.
 To run Software Attestation as a containerized service, the steps below need to be followed:
 
 * Build the python packages from found in `/pacakges` as `.wheel` files and copy them to the `/docker/dist` folder.
-
 * Use the trained models from the `container-classification` package to populate the `/docker/models` folder.
-
 * Configure accordingly the software attestation application via the `/cfgs/config.yaml` file.
-
 * Build the docker image via a build command:
 ```bash
 docker build -f ./p2code-software-attestation-dind.Dockerfile -t p2code-inference-pipeline .
