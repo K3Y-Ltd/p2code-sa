@@ -64,6 +64,11 @@ and execute an editable installation as follows:
 pip install -e ./src
 ```
 
+### Installation and execution as Docker container
+
+Software attestation can be deployed out-of-the-box as a docker container. Detailed build and execution instructions 
+can be found in the `./docker` folder of the current repo [here](./docker/README.md).
+
 
 ## References
 
