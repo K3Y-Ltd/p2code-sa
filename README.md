@@ -9,7 +9,8 @@
 
 ![software-attestation-architecture](/docs/p2code-software-attestation-architecture-overview.png)
 
-This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
+This repository holds code for the Software Attestation (SA) component developed in the context of the **P2CODE EU project** 
+with Grant Agreement **No 101093069** (see [acknowledgements](#acknowledgements)). The repository is organized
 as a monorepo, holding a set of Python packages with complementary functionalities that cover basic stages
 of the Software Attestation lifecycle. The packages included are the following:
 
@@ -29,9 +30,6 @@ References:
 - **[Dataset]**(https://huggingface.co/datasets/k3ylabs/cosoco-image-dataset)
 - **[Paper]**(https://ieeexplore.ieee.org/document/11161263) 
 - **[Preprint]**(https://arxiv.org/abs/2504.03238)
-
-P2CODE Software Attestation is developed in the context of the **P2CODE EU project** with Grant Agreement **No 101093069**
-(see [acknowledgements](#acknowledgements)).
 
 
 ## Installation
