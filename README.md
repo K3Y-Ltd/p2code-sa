@@ -9,9 +9,11 @@
 
 ![software-attestation-architecture](/docs/p2code-software-attestation-architecture-overview.png)
 
-This repository holds code for the P2CODE component of Software Attestation (SA). The repository is organized
-as a monorepo, holding a set of Python packages with complementary functionalities that cover basic stages
-of the Software Attestation lifecycle. The packages included are the following:
+This repository holds code for the Software Attestation (SA) component developed in the context of the **P2CODE EU project** 
+with Grant Agreement **No 101093069** (see [acknowledgements](#acknowledgements)). 
+
+The repository is organized as a monorepo, holding a set of Python packages with complementary functionalities that
+cover basic stages of the Software Attestation lifecycle. The packages included are the following:
 
 - **BinVis**: A Python package for visualizing binary files as images using space-filling curves. The supports
   handling visualizing binary files up to several GBs. ([docs](./packages/binvis/README.md))
@@ -112,3 +114,12 @@ with the bibtex entry:
   year      =  2025
 }
 ```
+
+## Acknowledgements
+
+🇪🇺 P2CODE project has received funding from the European Union's Horizon Europe research and 
+innovation programme under **Grant Agreement No 101093069**. 
+
+*Disclaimer: Funded by the European Union. Views and opinions expressed are however those of *
+*the author(s) only and do not necessarily reflect those of the European Union or European Commission.*
+*Neither the European Union nor the European Commission can be held responsible for them.*
