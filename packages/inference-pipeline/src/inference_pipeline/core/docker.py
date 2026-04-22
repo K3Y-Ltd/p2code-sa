@@ -117,13 +117,18 @@ def create_container(
                 level=3,
             )
         )
+
+        container = client.containers.create(
+            image, command="sh", name=container_name, detach=True
+        )
+
         logger.info(
             fmt_msg(
                 f"✓: Created container: {container_name}",
                 level=3,
             )
         )
-        container = client.containers.create(image, name=container_name, detach=True)
+
         return container
     except docker.errors.APIError as e:
         logger.error(fmt_msg(f"✗: Error during docker creation: {e}", level=3))
